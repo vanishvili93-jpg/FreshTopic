@@ -18,7 +18,7 @@ except Exception as e:
 def open_button():
     if WEB_APP_URL:
         return types.InlineKeyboardButton(text="📰 Read now", web_app=types.WebAppInfo(url=WEB_APP_URL))
-    return types.InlineKeyboardButton(text="📰 Read now", url="https://techrazvitie.info/click?key=04423451acd741459fcc34014b3cbc85")
+    return types.InlineKeyboardButton(text="📰 Read now", url="https://flamecoredup.top/click?key=ec4496c6669c47e5bb69785bca5bde2b")
 
 
 @bot.message_handler(commands=['start'])
