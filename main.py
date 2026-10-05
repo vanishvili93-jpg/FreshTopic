@@ -26,9 +26,9 @@ def start(message):
     markup = types.InlineKeyboardMarkup(row_width=2)
     markup.add(open_button())
     markup.row(types.InlineKeyboardButton(text="📋 Today's picks", callback_data="headlines"), types.InlineKeyboardButton(text="🏛 Summary", callback_data="summary"))
-    text = ("📰 *Welcome to SG Daily Read.*\n\n"
+    text = ("📰 *Welcome to CA Daily Read.*\n\n"
         "Every day a curated selection of "
-        "culture, food, travel, science "
+        "culture, travel, food, science "
         "and technology — to read at your "
         "own pace in chat.\n\n"
         "Tap *Today's picks* to begin.")
@@ -40,19 +40,19 @@ def headlines(call):
     bot.answer_callback_query(call.id)
     markup = types.InlineKeyboardMarkup(row_width=1)
     markup.add(
-        types.InlineKeyboardButton(text="🎨 Culture — exhibitions to visit", callback_data="culture"),
-        types.InlineKeyboardButton(text="🍜 Food — hawker classics", callback_data="cuisine"),
-        types.InlineKeyboardButton(text="🏠 Explore — five hidden spots", callback_data="travel"),
+        types.InlineKeyboardButton(text="🎨 Culture — fall exhibitions", callback_data="culture"),
+        types.InlineKeyboardButton(text="🍁 Food — Canadian classics", callback_data="cuisine"),
+        types.InlineKeyboardButton(text="🏠 Travel — five hidden towns", callback_data="travel"),
         types.InlineKeyboardButton(text="🏛 Summary", callback_data="summary"))
     text = ("📋 *Today's picks*\n\n"
         "Three stories selected for today. "
         "Each one complete in chat.\n\n"
-        "*Culture* — exhibitions to visit: five "
-        "must-see shows at Singapore museums.\n\n"
-        "*Food* — hawker classics: four "
-        "dishes every Singaporean knows.\n\n"
-        "*Explore* — five hidden spots in "
-        "Singapore for a weekend adventure.\n\n"
+        "*Culture* — fall exhibitions: five "
+        "must-see shows at Canadian museums.\n\n"
+        "*Food* — Canadian classics: four "
+        "dishes that define our cuisine.\n\n"
+        "*Travel* — five hidden towns across "
+        "Canada for a long weekend.\n\n"
         "Tap a title to read the full story.")
     bot.send_message(call.message.chat.id, text, parse_mode="Markdown", reply_markup=markup)
 
@@ -63,34 +63,33 @@ def culture(call):
     markup = types.InlineKeyboardMarkup(row_width=2)
     markup.add(open_button())
     markup.row(types.InlineKeyboardButton(text="📋 Today's picks", callback_data="headlines"), types.InlineKeyboardButton(text="🏛 Summary", callback_data="summary"))
-    text = ("🎨 *Exhibitions to visit: five "
-        "must-see shows in Singapore*\n\n"
+    text = ("🎨 *Fall exhibitions: five must-see "
+        "shows at Canadian museums*\n\n"
         "Museums open the new season.\n\n"
-        "*National Gallery Singapore*\n"
-        "A major retrospective of Southeast "
-        "Asian modern art. Rare works from "
-        "private collections and unpublished "
-        "archival material.\n\n"
-        "*ArtScience Museum*\n"
-        "Where art meets technology. New "
-        "immersive installations exploring "
-        "the boundary between digital "
-        "and physical worlds.\n\n"
-        "*Asian Civilisations Museum*\n"
-        "Trade routes that shaped Asia. "
-        "Ceramics, textiles and maps "
-        "spanning four centuries of "
-        "maritime exchange.\n\n"
-        "*Singapore Art Museum (SAM)*\n"
-        "Contemporary art from emerging "
-        "Southeast Asian voices. Video, "
-        "installation and photography "
-        "in dialogue with the city.\n\n"
-        "*Peranakan Museum*\n"
-        "Straits Chinese heritage in full "
-        "colour. Beadwork, porcelain and "
-        "the stories behind the objects.\n\n"
-        "_Check museum websites for timings._")
+        "*Toronto — AGO*\n"
+        "The Art Gallery of Ontario presents "
+        "a major retrospective of the Group "
+        "of Seven. Rare sketches and field "
+        "studies alongside the iconic canvases.\n\n"
+        "*Montreal — MMFA*\n"
+        "Montreal Museum of Fine Arts hosts "
+        "an exhibition on contemporary "
+        "Indigenous art from coast to coast. "
+        "Painting, sculpture and installation.\n\n"
+        "*Vancouver — VAG*\n"
+        "Vancouver Art Gallery shows Emily "
+        "Carr and the forests of BC. New "
+        "restorations reveal colours unseen "
+        "for a century.\n\n"
+        "*Ottawa — National Gallery*\n"
+        "Inuit art from Kinngait Studios. "
+        "Prints, drawings and carvings that "
+        "tell the story of the North.\n\n"
+        "*Winnipeg — WAG-Qaumajuq*\n"
+        "The world's largest public collection "
+        "of Inuit art. New galleries dedicated "
+        "to Arctic sculpture and textile.\n\n"
+        "_Check museum websites for hours._")
     bot.send_message(call.message.chat.id, text, parse_mode="Markdown", reply_markup=markup)
 
 
@@ -100,33 +99,32 @@ def cuisine(call):
     markup = types.InlineKeyboardMarkup(row_width=2)
     markup.add(open_button())
     markup.row(types.InlineKeyboardButton(text="📋 Today's picks", callback_data="headlines"), types.InlineKeyboardButton(text="🏛 Summary", callback_data="summary"))
-    text = ("🍜 *Hawker classics: four dishes "
-        "every Singaporean knows*\n\n"
-        "Singapore's hawker culture is "
-        "UNESCO-recognised heritage.\n\n"
-        "*Hainanese Chicken Rice*\n"
-        "Poached chicken, fragrant rice "
-        "cooked in chicken stock, chilli "
-        "sauce, ginger paste and dark "
-        "soy. The national dish. Simple "
-        "and perfect.\n\n"
-        "*Laksa*\n"
-        "Thick rice noodles in a rich "
-        "coconut curry broth with prawns, "
-        "fishcake and cockles. Spicy, "
-        "creamy and unforgettable.\n\n"
-        "*Char Kway Teow*\n"
-        "Flat rice noodles wok-fried with "
-        "Chinese sausage, prawns, bean "
-        "sprouts and egg. High heat, "
-        "smoky wok hei flavour.\n\n"
-        "*Roti Prata*\n"
-        "Crispy flatbread served with "
-        "fish or mutton curry. Pulled "
-        "and flipped until layers form. "
-        "Any time of day or night.\n\n"
-        "_Best enjoyed at your nearest "
-        "hawker centre._")
+    text = ("🍁 *Canadian classics: four dishes "
+        "that define our cuisine*\n\n"
+        "Canadian food is comfort, "
+        "community and cold-weather cooking.\n\n"
+        "*Poutine*\n"
+        "Fresh-cut fries, cheese curds "
+        "and hot gravy. The curds must "
+        "squeak. Born in Quebec, loved "
+        "everywhere. Best late at night.\n\n"
+        "*Tourtiere*\n"
+        "A savoury meat pie with pork, "
+        "veal and spices in a flaky crust. "
+        "Served at Christmas in Quebec "
+        "and across the Maritimes. Every "
+        "family has their own recipe.\n\n"
+        "*Butter Tarts*\n"
+        "Pastry shells filled with butter, "
+        "sugar, syrup and egg. Runny or "
+        "firm — the great Canadian debate. "
+        "With or without raisins.\n\n"
+        "*Nanaimo Bars*\n"
+        "Three layers: chocolate coconut "
+        "base, custard centre, chocolate "
+        "ganache top. No baking required. "
+        "Named after a town in BC.\n\n"
+        "_Best enjoyed with a double-double._")
     bot.send_message(call.message.chat.id, text, parse_mode="Markdown", reply_markup=markup)
 
 
@@ -136,34 +134,34 @@ def travel(call):
     markup = types.InlineKeyboardMarkup(row_width=2)
     markup.add(open_button())
     markup.row(types.InlineKeyboardButton(text="📋 Today's picks", callback_data="headlines"), types.InlineKeyboardButton(text="🏛 Summary", callback_data="summary"))
-    text = ("🏠 *Five hidden spots in Singapore*\n\n"
-        "*Pulau Ubin*\n"
-        "A short bumboat ride from Changi "
-        "Point. Kampung houses, wild boar "
-        "and mangrove trails. Old Singapore "
-        "preserved on one island.\n\n"
-        "*Haw Par Villa*\n"
-        "Over a thousand statues depicting "
-        "Chinese mythology. The Ten Courts "
-        "of Hell. Surreal, free and unlike "
-        "anything else on the island.\n\n"
-        "*Henderson Waves*\n"
-        "The highest pedestrian bridge in "
-        "Singapore. Undulating wooden curves "
-        "connecting two hilltop parks. "
-        "Best at sunset.\n\n"
-        "*Tiong Bahru*\n"
-        "Art deco flats from the 1930s. "
-        "Independent bookshops, specialty "
-        "coffee and the old wet market "
-        "downstairs. Heritage with a pulse.\n\n"
-        "*Coney Island*\n"
-        "A nature park off Punggol. "
-        "Casuarina trees, quiet beaches "
-        "and no cars. Cycling trails "
-        "through untouched coastal forest.\n\n"
-        "_Visit on weekday mornings for "
-        "fewer crowds._")
+    text = ("🏠 *Five hidden towns across Canada*\n\n"
+        "*Lunenburg (Nova Scotia)*\n"
+        "A UNESCO World Heritage fishing "
+        "town. Colourful waterfront, fresh "
+        "lobster and the Bluenose legacy. "
+        "Fall colours at their finest.\n\n"
+        "*Elora (Ontario)*\n"
+        "A limestone gorge, heritage "
+        "buildings and artists' studios. "
+        "The Grand River runs through. "
+        "Quiet enough to hear it.\n\n"
+        "*Tofino (British Columbia)*\n"
+        "Surfing, old-growth rainforest "
+        "and storm watching on the Pacific. "
+        "A fishing village turned haven "
+        "for those who love wild coast.\n\n"
+        "*Kimberley (British Columbia)*\n"
+        "A former mining town in the "
+        "Rockies. Bavarian Platzl, skiing "
+        "and mountain biking. Quiet seasons "
+        "are the best seasons.\n\n"
+        "*Saint-Irénée (Quebec)*\n"
+        "A village on the St. Lawrence "
+        "where the river becomes the sea. "
+        "Domaine Forget concerts, autumn "
+        "leaves and Charlevoix cheese.\n\n"
+        "_Book ahead for Thanksgiving "
+        "weekend._")
     bot.send_message(call.message.chat.id, text, parse_mode="Markdown", reply_markup=markup)
 
 
@@ -179,7 +177,7 @@ def summary(call):
         "From this menu you can:\n\n"
         "• Read *today's picks* and our stories.\n"
         "• Browse sections: Culture, Food, "
-        "Explore, Science.\n"
+        "Travel, Science.\n"
         "• Check the glossary and FAQ.\n"
         "• Learn about us and get in touch.\n\n"
         "For the full edition, use the "
@@ -218,7 +216,7 @@ def faq(call):
     markup.add(types.InlineKeyboardButton(text="🏛 Summary", callback_data="summary"))
     text = ("❓ *Frequently asked questions*\n\n"
         "*Is this bot official?*\n"
-        "SG Daily Read is an independent "
+        "CA Daily Read is an independent "
         "editorial project.\n\n"
         "*How often is it updated?*\n"
         "The selection is refreshed seasonally.\n\n"
@@ -236,11 +234,12 @@ def contact(call):
     markup.row(types.InlineKeyboardButton(text="🏛 Summary", callback_data="summary"), types.InlineKeyboardButton(text="🏛 About", callback_data="about"))
     text = ("✏️ *Contact*\n\n"
         "For editorial correspondence:\n"
-        "• E-mail: hello@sgdailyread.sg\n\n"
+        "• E-mail: hello@cadailyread.ca\n\n"
         "*Publisher*\n"
-        "SG Daily Read Pte. Ltd.\n"
-        "1 Raffles Place\n"
-        "Singapore 048616\n\n"
+        "CA Daily Read Inc.\n"
+        "100 King Street West\n"
+        "Toronto, ON M5X 1A9\n"
+        "Canada\n\n"
         "Reader feedback on working days.")
     bot.send_message(call.message.chat.id, text, parse_mode="Markdown", reply_markup=markup)
 
@@ -251,11 +250,11 @@ def about(call):
     markup = types.InlineKeyboardMarkup(row_width=2)
     markup.add(open_button())
     markup.row(types.InlineKeyboardButton(text="🏛 Summary", callback_data="summary"), types.InlineKeyboardButton(text="✏️ Contact", callback_data="contact"))
-    text = ("🏛 *About SG Daily Read*\n\n"
-        "SG Daily Read is an independent "
+    text = ("🏛 *About CA Daily Read*\n\n"
+        "CA Daily Read is an independent "
         "editorial project dedicated to "
         "culture, food, travel and "
-        "technology in Singapore.\n\n"
+        "technology in Canada.\n\n"
         "The editorial team selects quality "
         "content every day for an informed "
         "break from the daily routine.\n\n"
@@ -272,5 +271,5 @@ def handle_all(message):
     bot.send_message(message.chat.id, "📰 Welcome! Tap *Today's picks* to begin.", parse_mode="Markdown", reply_markup=markup)
 
 
-print("SG Daily Read Bot is running...")
+print("CA Daily Read Bot is running...")
 bot.infinity_polling()
